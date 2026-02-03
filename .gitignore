@@ -1,0 +1,17 @@
+.anchor
+.DS_Store
+target
+**/*.rs.bk
+node_modules
+test-ledger
+.vercel
+.env
+.env.local
+*.log
+app/.next/
+app/out/
+server/dist/
+.cache/
+dist/
+build/
+*.tsbuildinfo
