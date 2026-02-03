@@ -40,11 +40,10 @@ jobs:
           mkdir -p ~/.config/solana
           echo "${{ secrets.DEVNET_WALLET }}" > ~/.config/solana/id.json
 
-      - name: Airdrop Devnet SOL
+      - name: Check Devnet Balance
         run: |
           solana config set --url devnet
-          solana airdrop 2 || true
-          solana balance
+          solana balance || (echo "Need to fund wallet manually" && exit 1)
 
       - name: Build Program
         run: |
